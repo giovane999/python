@@ -3,8 +3,7 @@
 import time, webbrowser,socket 
 from selenium import webdriver  
 
-# Pega o navegador Utilizado 
-driver = webdriver.Chrome('/home/gnu32/Área de Trabalho/chromedriver') 
+
 
 def pegaNumero():
 	# Pega destinatario pelo titulo do nome 
@@ -15,12 +14,8 @@ def pegaNumero():
 	pegaNumero = pegaNumero.replace(" ", "")  
 	print("55" + pegaNumero)
 
+# Pega o navegador Utilizado 
+driver = webdriver.Chrome()
+driver.get('https://autocarro.com.br/unidus')
+pegaNumero()
  
-arquivo = open('lista.txt', 'r')
-texto = arquivo.readlines()
-for linha in texto :
-	try:
-		driver.get(linha)  
-		pegaNumero()
-	except:
-		print("nao deu")
